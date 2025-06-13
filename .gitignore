@@ -1,2 +1,7 @@
 config.php
 connection.php
+config.php
+connection.php
+vendor/
+checkmate.sql
+google-callback.php
