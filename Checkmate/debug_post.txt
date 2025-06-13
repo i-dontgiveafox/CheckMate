@@ -1,0 +1,10 @@
+Array
+(
+    [team_name] => asda
+    [team_color] => #3498db
+    [members] => Array
+        (
+            [0] => asdad
+        )
+
+)

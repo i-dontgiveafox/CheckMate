@@ -1,0 +1,84 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.update-task-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    position: relative;
+}
+
+.update-task-container h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d0f54;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: none;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    width: 100%;
+    background-color: #4b1ea2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #381a83;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+

@@ -1,0 +1,701 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ===== Colors ===== */
+    --body-color: #FFF;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #FFF;
+
+    /* ===== Transition ===== */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+    /* ===== Main Font ===== */
+    --title-text: "Lalezar", system-ui;
+}
+
+body {
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+body.dark {
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3A3B3C;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #FFF;
+    --text-color: #CCC;
+
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: #3B208D;
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+/* Reusable CSS */
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar .menu-title {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 25px;
+    transition: var(--tran-04);
+
+}
+
+.sidebar.close .text {
+    opacity: 0;
+
+}
+
+.sidebar.close .menu-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+    transition: var(--tran-04);
+}
+
+
+.sidebar .image {
+
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+    transition: var(--tran-02);
+
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name {
+    font-weight: 600;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 19px;
+    transition: var(--tran-03);
+
+}
+
+.sidebar.close header .toggle {
+    transform: translateY(-50%);
+}
+
+body.dark .sidebar header .toggle {
+    color: var(--text-color);
+}
+
+.sidebar .menu {
+    margin-top: 35px;
+}
+
+.sidebar .search-box {
+    background: #3B208D;
+    border-radius: 6px;
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color-light);
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+
+
+.sidebar li a:hover {
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+    /*transition: var(--tran-02);*/
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+    /*transition: var(--tran-02);*/
+}
+
+
+.sidebar .menu-bar {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode {
+    position: relative;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i {
+    position: absolute;
+    transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+    transition: var(var(--tran-05));
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--trans-03);
+
+}
+
+body.dark .switch::before {
+    left: 24px;
+}
+
+/* Home content */
+
+.home {
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    /* kapag sidebar open */
+    width: calc(100% - 250px);
+    transition: all 0.5s ease;
+}
+
+
+.home-content {
+    width: 100%;
+}
+
+.home .text {
+    font-size: 30px;
+    font-weight: 600;
+    color: #3B208D;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.current-date {
+    font-size: 20px;
+    font-weight: 300;
+    color: #3B208D;
+}
+
+.home .title-text {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    padding: 40px 40px;
+    text-align: left;
+    background-color: #695CFE;
+    width: 100%;
+}
+
+.home .sub-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #3B208D;
+    margin-top: 25px;
+
+    padding: 30px 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar.close~.home {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+/**body.dark .search-box {
+    background: var(--primary-color);
+}
+
+body.dark .search-box input {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+body.dark .toggle-switch,
+body.dark .mode {
+    background: var(--primary-color);
+}**/
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* allow cards to wrap onto next line */
+    justify-content: center;
+    /* center the cards horizontally */
+    gap: 1em;
+    /* space between the cards */
+    padding: 0 25px;
+}
+
+/* Style individual card to control width */
+.card {
+    flex: 0 0 calc(25% - 1em);
+    /* DON'T allow it to grow/shrink weirdly */
+    max-width: calc(24% - 1em);
+    /* Keep them the same width */
+    min-width: 300px;
+    /* Optional: prevent too small cards */
+}
+
+/* When screen is smaller (like tablet), show 2 cards per row */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 1em);
+        /* 2 cards in one row */
+    }
+}
+
+/* When even smaller (like mobile), show 1 card per row */
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}
+
+
+.hello-container {
+    padding: 40px 40px;
+}
+.hello-container .hello-text {
+    font-size: 30px;
+    font-weight: 600;
+    color: #3B208D;
+    margin-bottom: 20px;
+}
+
+.card {
+    width: 300px;
+    height: 120px;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#card1 {
+    background-color: #2F1C66;
+}
+
+#card2 {
+    background-color: #442997;
+}
+
+#card3 {
+    background-color: #865EFA;
+}
+
+#card4 {
+    background-color: #A158FF;
+}
+
+.card-title {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    /* Adjust right spacing */
+    transform: translateY(-50%);
+    /* Center vertically */
+    color: #FFF;
+    font-size: 16px;
+}
+
+.card-values {
+    position: absolute;
+    font-weight: 600;
+    top: 55%;
+    left: 20px;
+    /* Adjust right spacing */
+    transform: translateY(-50%);
+    /* Center vertically */
+    color: #FFF;
+    font-size: 32px;
+}
+
+.card-icon {
+    position: absolute;
+    top: 55%;
+    right: 30px;
+    /* Adjust right spacing */
+    transform: translateY(-50%);
+    /* Center vertically */
+    color: #FFF;
+    font-size: 28px;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* allow cards to wrap onto next line */
+    justify-content: space-evenly;
+    /* center the cards horizontally */
+    gap: 1em;
+    /* space between the cards */
+    padding: 25px 25px;
+    margin-top: 25px;
+    height: 100%;
+}
+
+.dashboard-container .d-wrapper {
+    width: 725px;
+    /* Set a fixed width for the card wrapper */
+    min-width: 250px;
+    /* Optional: prevent too small cards */
+    height: 100%;
+    border-radius: 25px;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#taskicon1 {
+    color: #2F1C66;
+}
+
+#taskicon2 {
+    color: #442997;
+}
+
+#taskicon3 {
+    color: #865EFA;
+}
+
+#taskicon4 {
+    color: #A158FF;
+}
+
+.todo-cards {
+    background-color: #E5E1F1;
+    width: 90%;
+    height: 150px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 350px;
+
+}
+
+.task-icon {
+    color: #695CFE;
+    font-size: 70px;
+    padding: 10px;
+}
+
+
+.todo-cards .task-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    height: 100%;
+    padding: 20px 0px;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.task-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2F1C66;
+    font-size: clamp(16px, 2vw, 20px);
+
+}
+
+.task-date {
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+    text-align: left;
+    border-radius: 25px;
+    width: auto;
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+
+}
+
+
+.home .clock-icon {
+    margin-right: 5px;
+}
+
+#taskdate1 {
+    background-color: #FE2D3B;
+}
+
+#taskdate2 {
+    background-color: #36CD68;
+}
+
+#taskdate3 {
+    background-color: #E1C527;
+}
+
+.task-details .task-description {
+    color: gray;
+    font-size: clamp(14px, 1vw, 16px);
+}
+
+
+.task-details .dot-menu {
+    position: absolute;
+    top: 25px;
+    right: -5px;
+    color: #3B208D;
+    cursor: pointer;
+    font-size: clamp(24px, 1vw, 35px);
+}
+
+.task-details .members-container {
+    position: absolute;
+    top: 70%;
+    left: 5px;
+    transform: translateY(-50%);
+    /* Center vertically */
+    color: #242526;
+    font-size: 16px;
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-details .member-icon {
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    border-radius: 25px;
+    background-color: #3B208D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-left: -10px;
+
+}
+
+.task-details .members-container2 {
+    position: absolute;
+    top: 70%;
+    left: 89%;
+    transform: translateY(-50%);
+    /* Center vertically */
+    color: #242526;
+    font-size: 16px;
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-details .member-icon2 {
+    font-weight: 600;
+    font-size: 12px;
+    color: white;
+    border-radius: 25px;
+    background-color: #3B208D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-left: -10px;
+
+}
+
+#member1 {
+    background-color: #7F35C9;
+}
+
+#member2 {
+    background-color: #695CFE;
+}
+
+#member3 {
+    background-color: #3B208D;
+}
+
+
+
+/**/

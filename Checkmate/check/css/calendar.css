@@ -1,0 +1,241 @@
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f9fc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    padding: auto;
+
+}
+
+.current-date {
+    font-size: 20px;
+    font-weight: 300;
+    color: #3B208D;
+}
+
+/* MAIN CONTAINER */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: right;
+    background: transparent;
+}
+
+/* .menu-links a.active {
+    background-color: #0a0432;
+    color: white;
+    border-radius: 5px;
+} */
+
+
+
+/* CALENDAR CONTAINER */
+.calendar-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    transition: transform 0.3s ease;
+
+}
+
+.calendar-container:hover {
+    transform: translateY(-5px);
+}
+
+/* CALENDAR HEADER */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.calendar-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.calendar-header button {
+    background: #3498db;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.calendar-header button:hover {
+    background: #2980b9;
+}
+
+/* DAYS OF WEEK */
+.day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* CALENDAR GRID */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+/* DAY CELL */
+.day {
+    background: #ecf0f1;
+    padding: 12px 0;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: #2c3e50;
+    transition: background 0.3s, transform 0.2s;
+    position: relative;
+}
+
+.day:hover {
+    background: #d0dff6;
+}
+
+/* TODAY */
+.day.today {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.6);
+}
+
+/* OTHER MONTH DAYS */
+.day.other-month {
+    background: #f1f1f1;
+    color: #aaa;
+}
+
+/* EVENT BADGE */
+.day.has-event::after {
+    content: attr(data-count);
+    font-size: 10px;
+    background: #3498db;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 6px;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+/* EVENT CONTAINER */
+.event-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+}
+
+.event-container:hover {
+    transform: translateY(-5px);
+}
+
+.event-container h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+/* EVENT LIST */
+#eventList {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#eventList li {
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+#eventList li button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* INPUT & BUTTON */
+#newEventInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#addEventBtn {
+    width: 100%;
+    background: #2ecc71;
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#addEventBtn:hover {
+    background: #27ae60;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .calendar-container,
+    .event-container {
+        width: 100%;
+        max-width: 500px;
+    }
+}
